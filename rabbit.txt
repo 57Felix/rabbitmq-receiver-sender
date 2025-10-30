@@ -1,0 +1,19 @@
+# Levantar RabbitMQ
+sudo systemctl start rabbitmq-server
+
+
+# Detener RabbitMQ
+sudo systemctl stop rabbitmq-server
+
+# Comprobar que realmente no escucha
+ss -lntp | grep -E '15672|5672' || echo "Puertos de RabbitMQ cerrados"
+
+
+#Re-habilitar arranque automático (opcional):
+sudo systemctl enable rabbitmq-server
+
+# Deshabilitar arranque automático (opcional):
+sudo systemctl disable rabbitmq-server
+
+# Verificar
+sudo systemctl status rabbitmq-server --no-pager
